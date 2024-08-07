@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
@@ -13,12 +14,12 @@ const Home: React.FC = () => {
       </section>
 
       <section className="flex flex-col md:flex-row justify-center items-center mb-12 space-y-4 md:space-y-0 md:space-x-6">
-        <a
-          href="/contact"
-          className="bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300"
-        >
-          Say Hello?
-        </a>
+            <NavLink to={'/contact'} 
+                className="bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300"
+             >
+              Say Hello?
+            </NavLink>
+          
       </section>
 
       <section className="w-full max-w-3xl mx-auto">
