@@ -52,6 +52,7 @@ export default function Contact() {
               Your Superhero Name
             </label>
             <input
+            required
               className="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
               name='from_name'
               id='from_name'
@@ -64,6 +65,7 @@ export default function Contact() {
               Your Top-Secret Email
             </label>
             <input
+            required
               className="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
               name='from_email'
               id='from_email'
@@ -76,6 +78,7 @@ export default function Contact() {
               Your Mind-Blowing Message
             </label>
             <textarea
+            required
               className="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
               name='message'
               id='message'
