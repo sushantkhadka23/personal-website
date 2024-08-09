@@ -55,7 +55,7 @@ const UserPage: React.FC = () => {
           <div className="px-6 py-8 sm:p-10 bg-gray-50 dark:bg-gray-800">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Welcome back,{user?.name}</h1>
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Welcome back, {user?.name}</h1>
               </div>
               <button
                 onClick={handleLogout}
@@ -64,19 +64,6 @@ const UserPage: React.FC = () => {
               >
                 {logoutLoading ? 'Logging out...' : 'Logout'}
               </button>
-            </div>
-          </div>
-          <div className="px-6 py-8 sm:p-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">User Information</h2>
-                <p className="text-gray-600 dark:text-gray-300">Email: {user?.email}</p>
-                <p className="text-gray-600 dark:text-gray-300">ID: {user?.id}</p>
-              </div>
-              <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Recent Activity</h2>
-                <p className="text-gray-600 dark:text-gray-300">No recent activity to display.</p>
-              </div>
             </div>
           </div>
         </div>
