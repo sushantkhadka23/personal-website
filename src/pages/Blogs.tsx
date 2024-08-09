@@ -158,7 +158,7 @@ const Blogs: React.FC = () => {
                   {isLoggedIn && (
                     <div className="flex space-x-2">
                       <NavLink
-                        to={`/edit/${blog.id}`}
+                        to={`/edit-blog/${blog.id}`}
                         className="bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 font-bold py-2 px-4 rounded hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors duration-300"
                       >
                         Edit
