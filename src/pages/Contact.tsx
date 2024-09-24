@@ -18,11 +18,13 @@ export default function Contact() {
 
     if (!formRef.current) {
       setStatus('Syntax Error: Form not found. Have you tried compiling and running again?');
+      setRecaptchaValue(null);
       return;
     }
 
     if (!recaptchaValue) {
       setStatus('Please complete the reCAPTCHA challenge before submitting.');
+      setRecaptchaValue(null);
       return;
     }
 
@@ -39,11 +41,13 @@ export default function Contact() {
           setStatus('Woohoo! Your message has been teleported to my inbox!');
           if (formRef.current) {
             formRef.current.reset();
+            setRecaptchaValue(null);
           }
         },
         (error) => {
           console.error('Error sending email:', error.text);
           setStatus('Uh-oh! Looks like your message got stuck in a digital traffic jam. Try again?');
+          setRecaptchaValue(null);
         }
       );
   };
@@ -111,7 +115,7 @@ export default function Contact() {
               Launch Message into Cyberspace!
             </button>
           </div>
-          {status && <p className="mt-4 text-center">{status}</p>}
+          {status && <p className="mt-4 text-center text-red-500 dark:text-red-400">{status}</p>}
         </form>
       </div>
     </div>
