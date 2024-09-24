@@ -9,7 +9,8 @@ const conf = {
   contactBackendUrl: String(import.meta.env.VITE_CONTACT_BACKEND_URL),
   emailJsServiceId: String(import.meta.env.VITE_EMAILJS_SERVICE_ID),
   emailJsTemplateId: String(import.meta.env.VITE_EMAILJS_TEMPLATE_ID),
-  emailJsPublicKey: String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+  emailJsPublicKey: String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY),
+  recaptchaSiteKey: String(import.meta.env.RECAPTCHA_SITE_KEY),
 };
 
 export default conf;

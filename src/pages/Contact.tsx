@@ -1,10 +1,17 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import conf from '../config/Conf';
+import ReCAPTCHA from 'react-google-recaptcha'; 
+
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [status, setStatus] = useState<string | null>(null);
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+
+  const handleRecaptchaChange = (value: string | null) => {
+    setRecaptchaValue(value);
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -13,6 +20,12 @@ export default function Contact() {
       setStatus('Syntax Error: Form not found. Have you tried compiling and running again?');
       return;
     }
+
+    if (!recaptchaValue) {
+      setStatus('Please complete the reCAPTCHA challenge before submitting.');
+      return;
+    }
+
     emailjs
       .sendForm(
         conf.emailJsServiceId,  
@@ -86,6 +99,10 @@ export default function Contact() {
               placeholder="Got an idea that could make cats the new overlords? Share it here..."
             ></textarea>
           </div>
+          <ReCAPTCHA
+            sitekey={conf.recaptchaSiteKey}
+            onChange={handleRecaptchaChange}
+          />
           <div className="flex items-center justify-between">
             <button
               className="w-full bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
